@@ -110,4 +110,16 @@ public class ContactBook {
 
     public String getName(int phone) { return contacts[searchIndexByPhone(phone)].getName(); }
 
+    public boolean checkNumbers() {
+        boolean found = false;
+        int i = 0;
+        while(i <= counter && !found) {
+            for(int j = i + 1; j < counter; j++) {
+                if(contacts[i].getPhone() == contacts[j].getPhone())
+                    found = true;
+            }
+            i++;
+        }
+        return found;
+    }
 }
