@@ -27,7 +27,6 @@ public class Main {
     public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
     public static final String EXISTS_SAME_NUMBER = "There are contacts that share phone numbers.";
     public static final String NOT_EXISTS_SAME_NUMBER = "All contacts have different phone numbers.";
-
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -172,7 +171,7 @@ public class Main {
     }
 
     private static void checkRepeatedNumbers(ContactBook cBook) {
-        if(cBook.getNumberOfContacts() == 0) {
+        if(cBook.isEmpty()) {
             System.out.println(NOT_EXISTS_SAME_NUMBER);
         } else {
             if(cBook.checkNumbers()) System.out.println(EXISTS_SAME_NUMBER);

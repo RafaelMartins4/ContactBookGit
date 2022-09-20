@@ -108,8 +108,10 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    //Pre: hasPhone(phone)
     public String getName(int phone) { return contacts[searchIndexByPhone(phone)].getName(); }
 
+    //Pre: !isEmpty()
     public boolean checkNumbers() {
         boolean found = false;
         int i = 0;
@@ -121,5 +123,9 @@ public class ContactBook {
             i++;
         }
         return found;
+    }
+
+    public boolean isEmpty() {
+        return counter == 0;
     }
 }
